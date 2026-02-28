@@ -30,6 +30,14 @@ _CATEGORIES: dict[str, dict[str, str]] = {
 _CATEGORY_ORDER = ["edge_computing", "manufacturing", "general_ai"]
 
 
+def _truncate(text: str, max_len: int) -> str:
+    """Truncate at word boundary with ellipsis."""
+    if len(text) <= max_len:
+        return text
+    cut = text[:max_len].rsplit(" ", 1)[0]
+    return cut.rstrip(".,;:!?") + "\u2026"
+
+
 # ---------------------------------------------------------------------------
 # Card builders
 # ---------------------------------------------------------------------------
@@ -115,8 +123,8 @@ def _build_card_body(
         })
 
         for article in cat_articles:
-            summary = (article.summary or "")[:200]
-            takeaway = (article.key_takeaway or "")[:120]
+            summary = _truncate(article.summary or "", 200)
+            takeaway = _truncate(article.key_takeaway or "", 140)
 
             # Article title
             body.append({
@@ -215,8 +223,8 @@ def _build_card_body(
         })
 
         # Description + reason
-        desc = (featured_video.description or "")[:200]
-        reason = (featured_video.reason or "")[:150]
+        desc = _truncate(featured_video.description or "", 220)
+        reason = _truncate(featured_video.reason or "", 160)
         if desc:
             body.append({
                 "type": "TextBlock",

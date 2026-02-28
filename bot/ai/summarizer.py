@@ -166,12 +166,13 @@ def summarize_articles(articles: list[Article]) -> list[SummarizedArticle]:
         "You are an AI news analyst specializing in edge computing, "
         "manufacturing AI, and broader AI industry trends.\n\n"
         f"Below are {len(articles)} recent news articles. For each, produce:\n"
-        "1. A concise 2-3 sentence summary of the key information\n"
-        "2. A single-sentence key takeaway focused on business/technical impact\n\n"
+        "1. A summary: EXACTLY 3 sentences, MAX 50 words total\n"
+        "2. A key takeaway: EXACTLY 1 sentence, MAX 20 words, focused on business/technical impact\n\n"
+        "STRICT: Do NOT exceed the word limits. Be punchy and direct.\n\n"
         "Respond ONLY with a JSON array. Each element:\n"
         '{"index": <number starting from 1>, '
-        '"summary": "<2-3 sentences>", '
-        '"key_takeaway": "<single sentence>"}\n\n'
+        '"summary": "<3 sentences, max 50 words>", '
+        '"key_takeaway": "<1 sentence, max 20 words>"}\n\n'
         f"Articles:\n{articles_block}"
     )
 
@@ -283,8 +284,8 @@ def pick_featured_video(
         "educational and relevant video for this audience.\n\n"
         "Respond ONLY with JSON:\n"
         '{"index": <number starting from 1>, '
-        '"reason": "<1 sentence — why valuable>", '
-        '"description": "<2-3 sentences — what the viewer will learn>"}\n\n'
+        '"reason": "<1 sentence, MAX 20 words — why valuable>", '
+        '"description": "<2 sentences, MAX 30 words — what the viewer will learn>"}\n\n'
         f"Videos:\n{videos_block}"
     )
 
