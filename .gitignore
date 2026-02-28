@@ -1,0 +1,22 @@
+# Secrets
+.env
+*.tfvars
+!*.tfvars.example
+
+# Runtime data
+data/
+*.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# Terraform
+infra/.terraform/
+infra/*.tfstate*
+infra/.terraform.lock.hcl
+
+# Lambda build artifacts
+dist/

@@ -1,0 +1,15 @@
+# File: infra/terraform.tfvars.example
+# Copy to terraform.tfvars and fill in values.
+# NEVER commit terraform.tfvars to source control.
+
+aws_region    = "eu-west-1"
+environment   = "prod"
+
+# Schedule: 07:00 UTC weekdays. Change to "cron(0 7 ? * * *)" for every day.
+schedule_expression = "cron(0 7 ? * MON-FRI *)"
+
+# === Secrets (use `terraform apply -var="gemini_api_key=xxx"` or set below) ===
+# gemini_api_key    = ""
+# teams_webhook_url = ""
+# news_api_key      = ""
+# youtube_api_key   = ""
