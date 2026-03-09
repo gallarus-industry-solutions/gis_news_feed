@@ -85,9 +85,10 @@ def _build_card_body(
     })
 
     # ── Editorial intro ────────────────────────────────────────────
+    truncated_intro = _truncate(intro, 300)
     body.append({
         "type": "TextBlock",
-        "text": f"*\"{intro[:300]}\"*",
+        "text": f"*\"{truncated_intro}\"*",
         "wrap": True,
         "spacing": "medium",
         "isSubtle": True,
