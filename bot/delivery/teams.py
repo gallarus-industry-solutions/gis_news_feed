@@ -22,12 +22,13 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 
 _CATEGORIES: dict[str, dict[str, str]] = {
-    "edge_computing": {"label": "\u26a1 Edge & Infrastructure", "style": "attention"},
-    "manufacturing":  {"label": "\U0001f3ed Smart Manufacturing",  "style": "good"},
-    "general_ai":     {"label": "\U0001f52e Innovation Horizon",   "style": "accent"},
+    "models_research":   {"label": "\U0001f9e0 Models & Research",     "style": "attention"},
+    "tools_products":    {"label": "\U0001f6e0\ufe0f Tools & Products",      "style": "good"},
+    "industry_business": {"label": "\U0001f4c8 Industry & Business",  "style": "accent"},
+    "general_ai":        {"label": "\U0001f52e AI Frontier",           "style": "default"},
 }
 
-_CATEGORY_ORDER = ["edge_computing", "manufacturing", "general_ai"]
+_CATEGORY_ORDER = ["models_research", "tools_products", "industry_business", "general_ai"]
 
 
 def _truncate(text: str, max_len: int) -> str:

@@ -163,8 +163,8 @@ def summarize_articles(articles: list[Article]) -> list[SummarizedArticle]:
     )
 
     prompt = (
-        "You are an AI news analyst specializing in edge computing, "
-        "manufacturing AI, and broader AI industry trends.\n\n"
+        "You are an AI news analyst covering the latest trends in "
+        "AI models, tools, agents, and the broader AI industry.\n\n"
         f"Below are {len(articles)} recent news articles. For each, produce:\n"
         "1. A summary: EXACTLY 3 sentences, MAX 50 words total\n"
         "2. A key takeaway: EXACTLY 1 sentence, MAX 20 words, focused on business/technical impact\n\n"
@@ -278,8 +278,8 @@ def pick_featured_video(
     )
 
     prompt = (
-        "You are curating an educational video for a manufacturing engineering "
-        "team that wants to learn about AI, edge computing, and Industry 4.0.\n\n"
+        "You are curating an educational video for a tech-savvy team "
+        "that wants to stay current on AI trends, tools, and research.\n\n"
         f"Below are {len(videos)} recent YouTube videos. Pick the SINGLE most "
         "educational and relevant video for this audience.\n\n"
         "Respond ONLY with JSON:\n"

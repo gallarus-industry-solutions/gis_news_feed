@@ -63,7 +63,7 @@ class Article:
     source: str
     published: Optional[datetime] = None
     description: str = ""
-    category: str = "general_ai"  # edge_computing | manufacturing | general_ai
+    category: str = "general_ai"  # models_research | tools_products | industry_business | general_ai
 
     @property
     def url_hash(self) -> str:
@@ -75,25 +75,34 @@ class Article:
 # Keyword-based classifier — cheap alternative to routing through an LLM
 # ---------------------------------------------------------------------------
 
-_EDGE_KEYWORDS = [
-    "edge computing", "edge ai", "edge inference", "on-device",
-    "iot", "embedded ai", "tinyml", "edge deployment", "on-prem ai",
+_MODELS_RESEARCH_KEYWORDS = [
+    "llm", "large language model", "gpt", "gemini", "claude", "llama",
+    "mistral", "open source model", "fine-tun", "benchmark", "transformer",
+    "diffusion model", "neural network", "training", "inference",
+    "multimodal", "reasoning", "research paper", "arxiv",
 ]
-_MFG_KEYWORDS = [
-    "manufactur", "factory", "industrial", "automation",
-    "quality control", "predictive maintenance", "supply chain",
-    "robotics", "digital twin", "smart factory", "industry 4.0",
-    "warehouse", "assembly line", "cnc", "plc",
+_TOOLS_PRODUCTS_KEYWORDS = [
+    "ai tool", "ai app", "chatbot", "copilot", "ai assistant",
+    "ai agent", "plugin", "api", "sdk", "platform", "saas",
+    "no-code", "low-code", "ai feature", "integration",
+    "release", "launch", "update", "new version",
+]
+_INDUSTRY_BUSINESS_KEYWORDS = [
+    "funding", "acquisition", "valuation", "startup", "ipo",
+    "regulat", "policy", "govern", "enterprise", "adoption",
+    "market", "revenue", "partnership", "invest",
 ]
 
 
 def _classify_article(article: Article) -> str:
     """Assign a topic bucket based on title + description keywords."""
     text = f"{article.title} {article.description}".lower()
-    if any(kw in text for kw in _EDGE_KEYWORDS):
-        return "edge_computing"
-    if any(kw in text for kw in _MFG_KEYWORDS):
-        return "manufacturing"
+    if any(kw in text for kw in _MODELS_RESEARCH_KEYWORDS):
+        return "models_research"
+    if any(kw in text for kw in _TOOLS_PRODUCTS_KEYWORDS):
+        return "tools_products"
+    if any(kw in text for kw in _INDUSTRY_BUSINESS_KEYWORDS):
+        return "industry_business"
     return "general_ai"
 
 

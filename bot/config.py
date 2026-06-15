@@ -29,13 +29,13 @@ GEMINI_MODEL: str = "gemini-3-flash-preview"
 # News — search queries for NewsAPI
 # ---------------------------------------------------------------------------
 SEARCH_QUERIES: list[str] = [
-    "AI edge computing",
-    "artificial intelligence manufacturing",
-    "AI industrial automation",
-    "edge AI inference",
-    "AI factory optimization",
-    "machine learning IoT manufacturing",
     "AI news today",
+    "artificial intelligence trends",
+    "large language models",
+    "AI tools new release",
+    "AI agents",
+    "generative AI",
+    "open source AI models",
 ]
 
 # ---------------------------------------------------------------------------
@@ -43,12 +43,12 @@ SEARCH_QUERIES: list[str] = [
 # ---------------------------------------------------------------------------
 RSS_FEEDS: list[str] = [
     # Google News topic searches
-    "https://news.google.com/rss/search?q=AI+edge+computing&hl=en-US&gl=US&ceid=US:en",
-    "https://news.google.com/rss/search?q=artificial+intelligence+manufacturing&hl=en-US&gl=US&ceid=US:en",
-    "https://news.google.com/rss/search?q=edge+AI+inference&hl=en-US&gl=US&ceid=US:en",
-    "https://news.google.com/rss/search?q=AI+industrial+automation&hl=en-US&gl=US&ceid=US:en",
-    "https://news.google.com/rss/search?q=smart+manufacturing+AI&hl=en-US&gl=US&ceid=US:en",
-    "https://news.google.com/rss/search?q=predictive+maintenance+AI&hl=en-US&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=artificial+intelligence+news&hl=en-US&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=AI+tools+new&hl=en-US&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=large+language+models&hl=en-US&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=generative+AI&hl=en-US&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=AI+agents+autonomous&hl=en-US&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=open+source+AI+models&hl=en-US&gl=US&ceid=US:en",
     # Publication feeds
     "https://feeds.feedburner.com/venturebeat/SZYF",
     "https://techcrunch.com/category/artificial-intelligence/feed/",
@@ -63,9 +63,7 @@ RSS_FEEDS: list[str] = [
 #   3. Or use https://commentpicker.com/youtube-channel-id.php
 # ---------------------------------------------------------------------------
 YOUTUBE_CHANNELS: dict[str, str] = {
-    # Manufacturing & Industrial (verified working)
-    "UC8wXC0ZCfGt3HaVLy_fdTQw": "Siemens",
-    # AI Research & Education (verified working)
+    # AI Research & Education
     "UCbfYPyITQ-7l4upoX8nvctg": "Two Minute Papers",
     "UCZHmQk67mSJgfCCTn7xBfew": "Yannic Kilcher",
     "UCNJ1Ymd5yFuUPtn21xtRbbw": "AI Explained",
@@ -74,16 +72,20 @@ YOUTUBE_CHANNELS: dict[str, str] = {
     "UCZeYkbo-0anAiKRDMGU2phw": "The AI Advantage",
     "UCLXo7UDZvByw2ixzpQCufnA": "Welker Media",
     "UCo8bcnLyZH8tBIH9V1mLgqQ": "TheAIGRID",
+    # AI Tools & Dev
+    "UCXZCJLdBC09xxGZ6gcdrc6A": "Matt Wolfe",
+    "UC2WHjPDvbE6O328n17ZGcfg": "ForrestKnight",
+    "UCmXmlB4-HJhA7-CVIHi9GIg": "WorldofAI",
 }
 
 # YouTube Data API keyword searches (used only when YOUTUBE_API_KEY is set)
 YOUTUBE_SEARCH_QUERIES: list[str] = [
-    "edge AI manufacturing tutorial",
-    "Industry 4.0 artificial intelligence",
-    "AI quality control factory",
-    "smart manufacturing AI",
-    "TinyML embedded AI",
-    "predictive maintenance machine learning",
+    "AI tools tutorial 2026",
+    "large language models explained",
+    "AI agents tutorial",
+    "best new AI tools",
+    "open source AI models",
+    "generative AI tutorial",
 ]
 
 # ---------------------------------------------------------------------------
@@ -98,4 +100,4 @@ MAX_VIDEO_AGE_HOURS: int = 168  # 7 days — videos are less frequent than news
 # Formatting
 # ---------------------------------------------------------------------------
 DIGEST_TITLE: str = "\u269b\ufe0f Gallarus Intelligence Bulletin"
-DIGEST_SUBTITLE: str = "Connection to Innovation \u2022 Your daily edge in AI & manufacturing"
+DIGEST_SUBTITLE: str = "Connection to Innovation \u2022 Your daily edge in AI trends & tools"

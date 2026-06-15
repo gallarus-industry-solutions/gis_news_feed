@@ -1,6 +1,6 @@
 # ⚛️ Gallarus Intelligence Bulletin
 
-**Automated AI & manufacturing news digest delivered to Microsoft Teams every morning.**
+**Automated AI news digest delivered to Microsoft Teams every morning.**
 
 Fetches news from RSS + NewsAPI, summarizes with Google Gemini, curates a YouTube learning video, and posts a branded Adaptive Card to your Teams channel — all on autopilot via AWS Lambda.
 
@@ -206,9 +206,10 @@ aws lambda invoke \
 
 | Category | Keywords Matched |
 |----------|-----------------|
-| ⚡ Edge & Infrastructure | edge computing, IoT, TinyML, embedded AI |
-| 🏭 Smart Manufacturing | factory, automation, quality control, Industry 4.0 |
-| 🔮 Innovation Horizon | General AI news not matching above |
+| 🧠 Models & Research | LLMs, GPT, Gemini, Claude, training, benchmarks, transformers |
+| 🛠️ Tools & Products | AI tools, chatbots, copilots, agents, APIs, platforms, releases |
+| 📈 Industry & Business | Funding, acquisitions, regulation, enterprise adoption |
+| 🔮 AI Frontier | General AI news not matching above |
 
 ## Costs
 
